@@ -1,0 +1,33 @@
+\documentclass[a4paper,11pt]{article} 
+\usepackage[T2A]{fontenc} 
+\usepackage[utf8]{inputenc} 
+\usepackage[english,russian]{babel} 
+\usepackage{tikz} 
+\usepackage[european,cuteinductors,smartlabels]{circuitikz} 
+\title{Практическая работа №2}
+\author{Прокофьев Иван  (8871)} 
+\begin{document} 
+\maketitle 
+ 
+\begin{tikzpicture}[scale=1]
+\newcommand{\alfa}{15} 
+\newcommand{\tetta}{65} 
+\newcommand{\D}{5}
+\newcommand{\T}{7} 
+\draw[thick,->,>=stealth'] (0,0) -- (10,0) node[below] {$X_1$}; 
+\draw[thick,->,>=stealth'] (0,0) -- ({10*cos(\tetta)},{10*sin(\tetta)}) node[left] {$Y_2$};
+\draw[thin,<->] (10,0) arc(0:65:10) node[midway,right] {$\Theta=65^\circ$}; 
+\draw[thin,->,>=stealth'] (0,0) -- ({\D*cos(\alfa)},{\D*sin(\alfa)}) node[at end, above right] {$\vec{z}$};
+\draw[thin,<->] (2,0) arc(0:15:2) node[midway,right] {$\alpha=15^\circ$}; \draw[thin,dashed,red] ({\D*cos(\alfa) },{\D*sin(\alfa) }) --({\D*cos(\alfa) },0)node[at end,below] {$x_1$}; 
+\draw[thin]({\D*cos(\alfa) },{\D*sin(\alfa) }) -- (4.2,0) node[at end,below] {$x^1$}; 
+\draw[thin,dashed,red]({\D*cos(\alfa) },{\D*sin(\alfa) }) -- ({3.15*cos(65) },{3.2*sin(65) }) node[at end,right] {$y_2$}; 
+\draw[thin]({\D*cos(\alfa) },{\D*sin(\alfa) }) -- ({0.6*cos(\teta) },{\D*sin(\alfa) }) node[at end,left] {$y^2$}; 
+\draw[thin,dashed,blue] (0,0) -- ({\T*cos(25) },{\T*sin(-25) }); 
+\draw[blue,thin,dashed] (0,0) -- (0,9); 
+\draw[blue,thin,->,>=stealth'] (0,0) -- ({3*cos(\tetta) },{3*sin(\tetta) }) node[left] {$\vec{e_2}$};
+\draw[thin,blue] ({3*cos(\tetta ) },{3*sin(\tetta ) }) --  (0,{3.2/cos(15)}) node[left] {$\vec{e^2}$};
+\draw[blue,thin,->,>=stealth'] (0,0) -- (3,0) node[below right] {$\vec{e_1}$}; 
+\draw[thin, blue] (3,{3.32*sin(-25) }) -- (3,0) node[at start,right] {$\vec{e^1}$}; 
+\end{tikzpicture} 
+
+\end{document}
